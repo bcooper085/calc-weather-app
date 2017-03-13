@@ -1,17 +1,27 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="bower_components/moment/min/moment.min.js"></script>
+    <script src="build/js/vendor.min.js"></script>
+    <script src="build/js/vendor.min.js"></script>
     <script type="text/javascript" src="build/js/app.js"></script>
     <title>Calculator</title>
   </head>
   <body>
+    <div class="container">
+      <h1>Calculator</h1>
+
+      <h3>Well look at the time! </h3>
+      <h3 id="time"></h3>
     <form id="add-form">
       <label for="first-number">Enter first number:</label>
       <input id="first-number" type="number">
       <label for="second-number">Enter Second Number:</label>
       <input id="second-number"type="number" name="name">
-      <button id="add" type="submit">Add</button>
+      <button class="btn-success" id="add" type="submit">Add</button>
     </form>
     <ul id="addSolution"></ul>
     <form id="subtract-form">
@@ -19,7 +29,7 @@
       <input id="first-numberS" type="number">
       <label for="second-number">Enter Second Number:</label>
       <input id="second-numberS"type="number" name="name">
-      <button id="subtract" type="submit">Subtract</button>
+      <button class="btn-success" id="subtract" type="submit">Subtract</button>
     </form>
     <ul id="subtractSolution"></ul>
     <form id="division-form">
@@ -27,7 +37,7 @@
       <input id="first-numberD" type="number">
       <label for="second-number">Enter Second Number:</label>
       <input id="second-numberD"type="number" name="name">
-      <button id="divide" type="submit">Division</button>
+      <button class="btn-success" id="divide" type="submit">Division</button>
     </form>
     <ul id="divisionSolution"></ul>
     <form id="multiply-form">
@@ -35,11 +45,11 @@
       <input id="first-numberM" type="number">
       <label for="second-number">Enter Second Number:</label>
       <input id="second-numberM"type="number" name="name">
-      <button id="multiply" type="submit">multiply</button>
+      <button class="btn-success" id="multiply" type="submit">multiply</button>
     </form>
     <ul id="multiplySolution"></ul>
-
-
+  </div>
+  
 
   </body>
 </html>

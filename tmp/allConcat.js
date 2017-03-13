@@ -44,3 +44,7 @@ $('#multiply-form').submit(function(event) {
 });
 
 });
+
+$(document).ready(function() {
+  $('#time').text(moment());
+});

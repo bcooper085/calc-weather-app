@@ -1,1 +1,76 @@
-!function t(r,n,e){function u(i,a){if(!n[i]){if(!r[i]){var l="function"==typeof require&&require;if(!a&&l)return l(i,!0);if(o)return o(i,!0);var f=new Error("Cannot find module '"+i+"'");throw f.code="MODULE_NOT_FOUND",f}var c=n[i]={exports:{}};r[i][0].call(c.exports,function(t){var n=r[i][1][t];return u(n?n:t)},c,c.exports,t,r,n,e)}return n[i].exports}for(var o="function"==typeof require&&require,i=0;i<e.length;i++)u(e[i]);return u}({1:[function(t,r,n){function e(){}e.prototype.add=function(t,r){return t+r},e.prototype.subtract=function(t,r){return t-r},e.prototype.multiply=function(t,r){return t*r},e.prototype.divide=function(t,r){return t/r},n.calculatorModule=e},{}],2:[function(t,r,n){var e=t("./../js/calculator.js").calculatorModule;$(document).ready(function(){$("#add-form").submit(function(t){t.preventDefault();var r=parseInt($("#first-number").val()),n=parseInt($("#second-number").val()),u=new e,o=u.add(r,n);$("#addSolution").text(o)}),$("#subtract-form").submit(function(t){t.preventDefault();var r=parseInt($("#first-numberS").val()),n=parseInt($("#second-numberS").val()),u=new e,o=u.subtract(r,n);$("#subtractSolution").text(o)}),$("#division-form").submit(function(t){t.preventDefault();var r=parseInt($("#first-numberD").val()),n=parseInt($("#second-numberD").val()),u=new e,o=u.divide(r,n);$("#divisionSolution").text(o)}),$("#multiply-form").submit(function(t){t.preventDefault();var r=parseInt($("#first-numberM").val()),n=parseInt($("#second-numberM").val()),u=new e,o=u.multiply(r,n);$("#multiplySolution").text(o)})})},{"./../js/calculator.js":1}]},{},[2]);
+(function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
+function Calculator(){
+
+}
+
+Calculator.prototype.add = function(number1, number2){
+  return number1 + number2;
+};
+
+Calculator.prototype.subtract = function(number1, number2){
+	return number1 - number2;
+};
+
+Calculator.prototype.multiply = function(number1, number2){
+	return number1 * number2;
+};
+
+Calculator.prototype.divide = function(number1, number2){
+	return number1 / number2;
+};
+
+exports.calculatorModule = Calculator;
+
+},{}],2:[function(require,module,exports){
+var Calculator = require('./../js/calculator.js').calculatorModule;
+
+$(document).ready(function() {
+  $('#add-form').submit(function(event) {
+    event.preventDefault();
+
+    var number1 = parseInt($('#first-number').val());
+    var number2 = parseInt($('#second-number').val());
+    var simpleCalculator = new Calculator();
+    var output = simpleCalculator.add(number1, number2);
+    $("#addSolution").text(output);
+
+});
+
+$('#subtract-form').submit(function(event) {
+  event.preventDefault();
+
+  var number1 = parseInt($('#first-numberS').val());
+  var number2 = parseInt($('#second-numberS').val());
+  var simpleCalculator = new Calculator();
+  var output = simpleCalculator.subtract(number1, number2);
+  $("#subtractSolution").text(output);
+
+});
+
+$('#division-form').submit(function(event) {
+  event.preventDefault();
+  var number1 = parseInt($('#first-numberD').val());
+  var number2 = parseInt($('#second-numberD').val());
+  var simpleCalculator = new Calculator();
+  var output = simpleCalculator.divide(number1, number2);
+  $('#divisionSolution').text(output);
+
+});
+
+$('#multiply-form').submit(function(event) {
+  event.preventDefault();
+  var number1 = parseInt($('#first-numberM').val());
+  var number2 = parseInt($('#second-numberM').val());
+  var simpleCalculator = new Calculator();
+  var output = simpleCalculator.multiply(number1, number2);
+  $('#multiplySolution').text(output);
+
+});
+
+});
+
+$(document).ready(function() {
+  $('#time').text(moment());
+});
+
+},{"./../js/calculator.js":1}]},{},[2]);
